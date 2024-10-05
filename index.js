@@ -11,6 +11,23 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+
 const titleCased = () => {
-  return tutorials
+  return tutorials.map((text) => {
+    return text.toLowerCase().split(' ')
+      .map(word => {
+        if (word === 'oo' )return 'OO';
+        if (word === 'api')return 'API';
+        if (word === 'nan')return 'NaN';
+        if (word === 'stoppropagation') return 'StopPropagation';
+        if (word === 'preventdefault?') return 'PreventDefault?';
+        if (word === 'jsonp?')return 'JSONP?';
+      return word.charAt(0).toUpperCase() + word.slice(1)
+      })
+      .join(' ')
+  })
 }
+console.log(titleCased());
+
+
+
